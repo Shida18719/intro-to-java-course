@@ -1,6 +1,9 @@
 package com.cbfacademy;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Stack;
 
 public class CollectionsExercises {
 
@@ -12,9 +15,21 @@ public class CollectionsExercises {
         //  - add 4 as the 3rd element of the list
         //  - invoke the method element() on the list and print the result on the screen
         //  - return the list
-        throw new RuntimeException("Not implemented");
-    }
+        LinkedList<Integer> linkedElement = new LinkedList<>();
 
+        linkedElement.addFirst(4);
+        linkedElement.add(5);
+        linkedElement.add(6);
+        linkedElement.add(8);
+        linkedElement.add(2);
+        linkedElement.add(9);
+        linkedElement.addLast(2);
+        linkedElement.add(2, 4);
+        System.out.print(linkedElement.element());
+
+        return linkedElement;
+    }
+        
     public Stack<Integer> useStack() {
         // TODO: create an empty stack
         //  - add 5, 6, 8, 9 to the stack
@@ -23,7 +38,19 @@ public class CollectionsExercises {
         //  - invoke the method pop() on the stack and print the result on the screen
         //  - invoke the push(4) method on the stack
         //  - return the stack
-        throw new RuntimeException("Not implemented");
+
+        Stack<Integer> stackElement = new Stack<>();
+
+        stackElement.push(5);
+        stackElement.push(6);
+        stackElement.push(8);
+        stackElement.push(9);
+        System.out.print(stackElement.firstElement());
+        System.out.print(stackElement.lastElement());
+        System.out.print(stackElement.pop());
+        stackElement.push(4);
+
+        return stackElement;
     }
 
     public ArrayDeque<Integer> useArrayDeque() {
@@ -34,7 +61,18 @@ public class CollectionsExercises {
         //  - invoke the method poll() on the queue and print the result on the screen
         //  - invoke the element() method on the queue and print the result on the screen
         //  - return the queue
-        throw new RuntimeException("Not implemented");
+        ArrayDeque<Integer> dequeElement = new ArrayDeque<>();
+        dequeElement.add(5);
+        dequeElement.add(6);
+        dequeElement.add(8);
+        dequeElement.add(9);
+        System.out.print(dequeElement.peekFirst());
+        System.out.print(dequeElement.peekLast());
+        System.out.print(dequeElement.poll());
+        System.out.print(dequeElement.element());
+
+        return dequeElement;
+
     }
 
     public HashMap<Integer, String> useHashMap() {
@@ -49,7 +87,19 @@ public class CollectionsExercises {
         //  - determine the set of values from the map and print it on the screen
         //  - determine whether the map contains "English" as a language and print the result on the screen
         //  - return the map
-        throw new RuntimeException("Not implemented");
+        HashMap<Integer, String> hashMapElement = new HashMap<>();
+        hashMapElement.put(1, "TypeScript");
+        hashMapElement.put(2, "Kotlin");
+        hashMapElement.put(3, "Python");
+        hashMapElement.put(4, "Java");
+        hashMapElement.put(5, "JavaScript");
+        hashMapElement.put(6, "Rust");
+
+        System.out.print(hashMapElement.keySet());
+        System.out.print(hashMapElement.values());
+        System.out.print(hashMapElement.containsValue("English"));
+
+        return hashMapElement;
     }
 
     public String getName() {
