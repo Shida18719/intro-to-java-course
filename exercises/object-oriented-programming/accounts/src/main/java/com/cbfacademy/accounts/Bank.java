@@ -5,23 +5,21 @@ import java.util.List;
 
 public class Bank {
 
-    private List<Account> accounts;
+    private List<Account> accountsList;
     
-
+   // storing a internal list of accountsList.
     public Bank() {
-        accounts = new ArrayList<>();
-        // accounts.add(new Account(1, 99.99));
-        // accounts.add(new Account(2, 199.99));
+        accountsList = new ArrayList<>();
     }
 
     // opening a new account, given a type and balance.
     public void openNewAccount(String accountType, int accountNumber, double initialBalance, double interestRate, double overdraftLimit){
         if (accountType.equals("savings")){
-            accounts.add(new SavingsAccount(accountNumber, initialBalance, interestRate));
+            accountsList.add(new SavingsAccount(accountNumber, initialBalance, interestRate));
         } else if (accountType.equals("current")){
-            accounts.add(new CurrentAccount(accountNumber, initialBalance, overdraftLimit));
+            accountsList.add(new CurrentAccount(accountNumber, initialBalance, overdraftLimit));
         } else {
-            accounts.add(new Account(accountNumber, initialBalance));
+            accountsList.add(new Account(accountNumber, initialBalance));
         }
     }
     
@@ -29,7 +27,7 @@ public class Bank {
     // getting a list of account numbers held by the bank
     public List<Integer> getAccountNumbers(){
         List<Integer> accountNumbers = new ArrayList<>();
-        for (Account account : accounts){
+        for (Account account : accountsList){
             accountNumbers.add(account.getAccountNumber());
         }
         return accountNumbers;
@@ -37,7 +35,7 @@ public class Bank {
 
     // getting an account, given an account number
     public Account getAccount(int accountNumber){
-        for (Account account : accounts){
+        for (Account account : accountsList){
             if (account.getAccountNumber() == accountNumber){
                 return account;
             }
@@ -47,9 +45,9 @@ public class Bank {
 
     // closing an account, given an account number
     public boolean closeAccount(int accountNumber){
-        for (Account account : accounts){
+        for (Account account : accountsList){
             if (account.getAccountNumber() == accountNumber){
-                accounts.remove(account);
+                accountsList.remove(account);
                 return true;
             } else {
                 System.out.println("Account has been closed.");  
@@ -59,16 +57,15 @@ public class Bank {
     }
 
     // displaying a report of all accounts held by the bank
-    public void displayReport(){
-        for (Account account : accounts){
-            System.out.println(account.getAccountNumber() + " " + account.getBalance());
-        }
-    }
     // public void displayReport(){
-    //     Account savings = Bank.getAccountNumber();
-    //     Account current = Bank.getAccount();
-
+    //     for (Account account : accountsList){
+    //         System.out.println(account.getAccountNumber() + " " + account.getBalance());
+    //     }
     // }
+
+    public List<Account> displayReport(){
+       return this.accountsList;
+    }
 
     // paying a dividend to all accounts held by the bank
 
