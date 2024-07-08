@@ -7,7 +7,7 @@ public class Car {
     private String colour;
     private int year;
 
-    // Constructor
+    // Constructor, getters, and setters
     public Car(String make, String model, String colour, int year) {
         this.make = make;
         this.model = model;
@@ -39,6 +39,12 @@ public class Car {
         return "Make: " + this.make + ", Model: " + this.model + ", Colour: " + this.colour + ", Year: " + this.year;
         
         // return String.format("%s %s %s (%d)", colour, make, model, year);
+    }
+
+    // Override the toString method in the getDetails method
+    @Override
+    public String toString() {
+        return getDetails();
     }
 
 }
