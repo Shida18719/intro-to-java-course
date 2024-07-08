@@ -92,6 +92,7 @@ public class FlowControlExercises {
         }
     }
 
+    // Implement the sumOfOddsAndSumOfEvens method
     public Map<String, Integer> sumOfOddsAndSumOfEvens() {
         // TODO - Implement this method such that
         //  - creates and initialises a list of 100 numbers - from 1 to 100
@@ -99,20 +100,45 @@ public class FlowControlExercises {
         //  - determines the sum of all the odd numbers in the list
         //  - returns a map with two entries:
         //      {"SumOfEvens", calculatedSumOfEvens}, {"SumOfOdds", calculatedSumOfOdds}
-        Map<String, Integer> sumsOfNumbers = new HashMap<>();
+        
 
-         // Inserting entries in the Map
-         
+        int sumOfEvens = 0;
+        int sumOfOdds = 0;
+
+        for(int number = 1; number <= 100; number++) {
+            if(number % 2 == 0) {
+                sumOfEvens += number;
+            } else {
+                sumOfOdds += number;
+            }
+        }
+
+        // Inserting entries in the Map
+        Map<String, Integer> sumsOfNumbers = new HashMap<>();
+        sumsOfNumbers.put("SumOfEvens", sumOfEvens);
+        sumsOfNumbers.put("SumOfOdds", sumOfOdds);
+        
+        return sumsOfNumbers;   
     }
+
+    
 
     public List<Integer> reverse(ArrayList<Integer> numbers) {
         // TODO - Implement this method such that
         //  - it takes an array list of integers
         //  - it returns the list in reverse order
-        throw new RuntimeException("Not implemented");
+        List<Integer> arrList = new ArrayList<>();
+
+        // Loop through numbers from the last element to the first element.
+        for(int i = numbers.size() - 1; i >= 0; i--) {
+            arrList.add(numbers.get(i));
+        }
+        return arrList;
+
     }
 
     public String getName() {
         return "Flow Control Exercises";
     }
+    
 }
