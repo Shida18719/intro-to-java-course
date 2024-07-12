@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class ExerciseClient {
+    // Client-Server that sends a message to the server
     public static void main(String[] args) {
         try (Socket socket = new Socket("localhost", 4040);
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true)) {
