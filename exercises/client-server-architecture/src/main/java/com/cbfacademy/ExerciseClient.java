@@ -1,8 +1,11 @@
 package com.cbfacademy;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.Socket;
+// import java.io.IOException;
+// import java.io.PrintWriter;
+// import java.net.Socket;
+
+import java.io.*;
+import java.net.*;
 
 public class ExerciseClient {
     // Client-Server that sends a message to the server
