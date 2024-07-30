@@ -7,6 +7,7 @@ public class Account {
     protected int accountNumber;
     protected double balance;
 
+    // constructor that accepts parameters representing the account number and balance
     public Account(int accountNumber, double balance) {
         this.accountNumber = accountNumber;
         this.balance = balance;
