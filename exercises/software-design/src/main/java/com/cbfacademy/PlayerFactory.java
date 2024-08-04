@@ -6,7 +6,11 @@ public class PlayerFactory {
      *
      * @return A new player.
      */
-    public static DicePlayer create() {
-        return new DicePlayer();
+    // public static DicePlayer create() {
+    //     return new DicePlayer();
+    // }
+
+    public static Player create() {
+        return new DicePlayer();  // New modification - Returning a DicePlayer instance which implements Player interface
     }
 }
