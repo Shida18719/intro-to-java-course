@@ -1,19 +1,20 @@
 package com.cbfacademy;
 
 public class DiceGame implements Game {
-    // private DicePlayer player1;
-    // private DicePlayer player2;
-
+    // Modify the player1 and player2 members to be of type Player rather than DicePlayer
     private Player player1;
     private Player player2;
     private int targetScore = 30;
 
-    public DiceGame() {
-        player1 = PlayerFactory.create();
-        player2 = PlayerFactory.create();
+    // modify the DiceGame constructor to accept two Player Parameters - Injected as constructor arguments
+    public DiceGame(Player player1, Player player2) {
+
+        this.player1 = player1;
+        this.player2 = player2;
         player1.setName("Player 1");
-        player2.setName("Player 2");
+        player2.setName("Player 2"); 
     }
+
 
     public String play() {
         int score1 = 0;
