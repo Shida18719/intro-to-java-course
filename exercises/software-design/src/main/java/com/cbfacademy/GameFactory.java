@@ -12,6 +12,8 @@ public class GameFactory {
     // }
 
     public static Game create() {
-        return new DiceGame();  // New modification - Returning a DiceGame instance which implements Game interface
+        Player player1 = PlayerFactory.create();
+        Player player2 = PlayerFactory.create();
+        return new DiceGame(player1, player2);  // New modification - Returning a DiceGame instance which implements Game interface
     }
 }
