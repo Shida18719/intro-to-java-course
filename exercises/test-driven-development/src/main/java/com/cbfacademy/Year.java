@@ -23,12 +23,12 @@ public class Year {
         }
 
         // Years divisible by 100 but not by 400 are not leap years
-        if(this.year % 100 == 0 && this.year % 400 != 0) {
+        if(this.year % 100 == 0) {
             return false;
         }
-
+       
         // Years divisible by 4, but not by 100 are leap years
-        if(this.year % 4 == 0 && this.year % 100 != 0) {
+        if(this.year % 4 == 0) {
             return true;
         }
         return false;
