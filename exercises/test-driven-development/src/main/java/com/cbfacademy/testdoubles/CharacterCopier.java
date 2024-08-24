@@ -10,6 +10,6 @@ public class CharacterCopier {
         this.destination = destination;
     }
 
-    public void copy() {
+    public void copy() { // Empty method for testing purposes
     }
 }
