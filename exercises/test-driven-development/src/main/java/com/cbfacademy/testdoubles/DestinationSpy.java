@@ -6,7 +6,7 @@ interface Destination {
 }
 
 public class DestinationSpy implements Destination {
-    private Integer numberOfCalls;
+    private Integer numberOfCalls = 0; // Add value to Number of times the method was called
 
     @Override
     public void setChar(final String character) {

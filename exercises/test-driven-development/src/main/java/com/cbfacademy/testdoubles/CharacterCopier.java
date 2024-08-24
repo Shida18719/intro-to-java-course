@@ -10,6 +10,8 @@ public class CharacterCopier {
         this.destination = destination;
     }
 
-    public void copy() { // Empty method for testing purposes
+    public void copy() {
+        final String character = this.source.getChar();
+        this.destination.setChar(character);
     }
 }
