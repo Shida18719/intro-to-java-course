@@ -3,6 +3,7 @@ package com.cbfacademy;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.ListIterator;
 
 public class CollectionsAssignment {
 
@@ -16,7 +17,15 @@ public class CollectionsAssignment {
      */
     public static void removeSmallInts(List<Integer> list, int minValue) {
         // Your solution must traverse the list from last to first element
-        // removing any values less than minValue.
+        // List<Integer> lists = new ArrayList<>();
+        
+        // Traverse the list from last to first element and remove all smaller values from the lists
+        for (int i = list.size() - 1; i >= 0; i--) {
+            if (list.get(i) < minValue) {
+                list.remove(i);
+            }
+        }
+
     }
 
     /**
