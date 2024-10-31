@@ -2,6 +2,7 @@ package com.cbfacademy;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -37,8 +38,15 @@ public class CollectionsAssignment {
      */
     public static boolean containsDuplicates(Collection<Integer> integers) {
         // Your solution must not use any loops.
-        return false;
+
+        // Convert collection to set to remove duplicates and compare sizes
+        Collection<Integer> elements = new HashSet<>(integers);
+    
+        // If sizes differ, duplicates were present
+        return integers.size() != elements.size();
     }
+
+
 
     /**
      * This method returns an ArrayList containing all elements that appear in
