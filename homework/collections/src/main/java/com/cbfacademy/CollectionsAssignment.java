@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class CollectionsAssignment {
@@ -72,6 +73,7 @@ public class CollectionsAssignment {
         // TreeSet sort the elements according to some Comparator
         Collection<Integer> firstSet = new TreeSet<>(ints1);
         firstSet.addAll(ints2); // Add all elements from second collection
+
         return new ArrayList<Integer>(firstSet);
     }
 
@@ -91,8 +93,14 @@ public class CollectionsAssignment {
      */
     public static ArrayList<Integer> inBoth(Collection<Integer> ints1, Collection<Integer> ints2) {
         // This must be done with no loops.
-        return new ArrayList<>();
+
+        // Use TreeSet to sort elements in order and removes duplicate
+        Set<Integer> firstSet = new TreeSet<>(ints1);
+        firstSet.retainAll(ints2);
+
+        return new ArrayList<Integer>(firstSet);
     }
+
 
     /**
      * This method returns the String that appears most frequently in the
