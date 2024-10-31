@@ -2,11 +2,15 @@ package com.cbfacademy;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class CollectionsAssignment {
 
@@ -118,8 +122,36 @@ public class CollectionsAssignment {
         // your counts to find the largest. You'll need a collection that allows
         // you to store a mapping from Strings to counts.
         // No nested loops or non-enhanced for-loops are allowed.
-        return "";
+
+        // Handle empty list case
+        if (list.isEmpty()) {
+            return "";
+        }
+
+        // Use HashMap to count occurrences
+        Map<String, Integer> occurrencesMap = new HashMap<>();
+
+        // iteration from last to first occurrence
+        for (int i = list.size() - 1; i >= 0; i--) {
+
+            String currentStr = list.get(i);
+            occurrencesMap.put(currentStr, occurrencesMap.getOrDefault(currentStr, 0) + 1); // getOrDefault() increment string counts
+        }
+
+       // The most frequent string
+        String mostFrequent = "";
+        int largestCount = 0;
+
+        // using entrySet() to find the string with the largest count
+        for (Map.Entry<String, Integer> entry : occurrencesMap.entrySet()) {
+            if (entry.getValue() > largestCount) {
+                mostFrequent = entry.getKey();
+                largestCount = entry.getValue();
+            }
+        }
+        return mostFrequent;
     }
+    
 
     public static String getName() {
         return "Collections Assignment";
