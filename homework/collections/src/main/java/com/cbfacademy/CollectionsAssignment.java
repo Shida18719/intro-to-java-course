@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.TreeSet;
 
 public class CollectionsAssignment {
 
@@ -39,6 +40,8 @@ public class CollectionsAssignment {
     public static boolean containsDuplicates(Collection<Integer> integers) {
         // Your solution must not use any loops.
 
+        // HashSet implements Set interface, 
+        //so they are not allowed to store duplicates objects. REF: geeksforgeeks.org
         // Convert collection to set to remove duplicates and compare sizes
         Collection<Integer> elements = new HashSet<>(integers);
     
@@ -65,8 +68,13 @@ public class CollectionsAssignment {
      */
     public static ArrayList<Integer> inEither(Collection<Integer> ints1, Collection<Integer> ints2) {
         // This must be done with no loops.
-        return new ArrayList<Integer>();
+
+        // TreeSet sort the elements according to some Comparator
+        Collection<Integer> firstSet = new TreeSet<>(ints1);
+        firstSet.addAll(ints2); // Add all elements from second collection
+        return new ArrayList<Integer>(firstSet);
     }
+
 
     /**
      * This method returns an ArrayList containing all elements that appear in
