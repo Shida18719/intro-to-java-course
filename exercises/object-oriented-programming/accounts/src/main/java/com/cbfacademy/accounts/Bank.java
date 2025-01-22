@@ -6,6 +6,8 @@ import java.util.List;
 public class Bank {
 
     private List<Account> accountsList;
+
+    protected double dividend;
     
    // storing a internal list of accountsList.
     public Bank() {
@@ -57,19 +59,26 @@ public class Bank {
     }
 
     // displaying a report of all accounts held by the bank
-    // public void displayReport(){
-    //     for (Account account : accountsList){
-    //         System.out.println(account.getAccountNumber() + " " + account.getBalance());
-    //     }
-    // }
-
     public List<Account> displayReport(){
        return this.accountsList;
     }
 
+
     // paying a dividend to all accounts held by the bank
+    public void payDividend(double dividend) {
+        for (Account account : accountsList){
+            account.deposit(dividend);
+        }
+    }
 
-
+    // Applying interest to all savings accounts
+    public void applyInterest(){
+        for (Account account : accountsList){
+            if (account instanceof SavingsAccount){
+                ((SavingsAccount) account).applyInterest();
+            }
+        }
+    }
     
 }
 
