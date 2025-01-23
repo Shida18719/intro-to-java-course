@@ -79,6 +79,17 @@ public class Bank {
             }
         }
     }
+
+    // Contacting all current account holders if their account is in overdraft.
+    public void contactCurrentAccounts(){
+        for (Account account : accountsList){
+            if (account instanceof CurrentAccount){
+                if (account.getBalance() < 0){
+                    System.out.println("Account number: " + account.getAccountNumber() + " is in overdraft.");
+                }
+            }
+        }
+    }
     
 }
 
